@@ -1,44 +1,28 @@
 <!-- convert EDMX TO XSD -->
-
 <!DOCTYPE html>
 <html>
-
-<script>
-    // function myFunction() {
-    //     document.getElementById("demo").innerHTML = "Hello World";
-    // }
-
-
-
-</script>
-
 <body>
-
-<form action="/action_page.php" id="usrform">
-  Name: <input type="text" name="usrname">
-  <input type="submit">
-</form>
-<br>
-
-<button  type="button" onclick="onClickButton">Convert EDMX 2 XSD </button>
-
-<h1>EDMX</h1>
-<textarea rows="4" cols="50" name="comment" form="usrform">
-Enter EDMX here...</textarea>
-
-<h1>XSD Conversion</h1>
-<textarea rows="4" cols="50" name="comment" form="usrform">
-Enter EDMX here...</textarea>
-
-<!-- <p>The text area above is outside the form element, but should still be a part of the form.</p>
-<p><b>Note:</b> The form attribute is not supported in IE.</p> -->
-
+    NameSpace: <input  id = "nameid" type="text" value = "namespace.com">
+    <h1>EDMX</h1>
+    <textarea id = "EDMXid" rows="4" cols="50" name="comment" form="usrform">Enter EDMX here...</textarea>
+    <h1>XSD Conversion</h1>
+    <textarea id = "XSDdid" rows="4" cols="50" name="comment" form="usrform"></textarea>
+    <br/>
+    <button  type="button" onclick="onClickButton()">Convert EDMX 2 XSD </button>
 </body>
+<script>
+    function onClickButton() {
+        var sEDMX = document.getElementById("EDMXid").innerHTML;
+        var sName = document.getElementById("nameid").value;
+        
+        sXSD = "Hello World "+ sEDMX + sName;
+
+
+        document.getElementById("XSDdid").innerHTML =sXSD; 
+    }
+</script>
 </html>
-
-<!-- XSD 
-
-    
+<!-- XSD  
 <schema> targetNamespace = 
 xmlns
 types: 
@@ -50,9 +34,8 @@ types:
                 complex type 
                         sequence 
                             element 
-</schema>
-
-                          
+</schema>  
+.               
 var sNamespace = '"http://namespace.com/project1"'
 var sDescription = ' "DT Project 1 " '
 _______________________________________________________
@@ -76,6 +59,4 @@ _______________________________________________________
         </xsd:sequence>
     </xsd:complexType>
 </xsd:schema>
-    
 -->
-
